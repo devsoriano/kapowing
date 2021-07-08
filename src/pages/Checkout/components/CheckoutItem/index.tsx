@@ -24,6 +24,7 @@ const CheckoutItem = ({
   passengers,
   totalCost,
   clearItem,
+  quantity,
 }: any) => {
   const item = {
     arrivalCity,
@@ -36,6 +37,7 @@ const CheckoutItem = ({
     img,
     passengers,
     totalCost,
+    quantity,
   };
   return (
     <CardContainer>
@@ -49,11 +51,17 @@ const CheckoutItem = ({
             totalCost / parseInt(passengers),
           )} MXN`}</Price>
           por persona,
-        </h3>
+        </h3>{' '}
         <h3>
-          {`por ${passengers} pasajeros`}{' '}
-          <Price>{`${moneyFormat.format(totalCost)} MXN`}</Price>
+          {`X ${passengers} pasajeros`}
+          <Price>{`${moneyFormat.format(totalCost)} MXN`}</Price>,
         </h3>
+        {quantity > 1 && (
+          <h3>
+            {`X ${quantity} veces este paquete:`}
+            <Price>{` ${moneyFormat.format(totalCost * quantity)} MXN`}</Price>
+          </h3>
+        )}
         <button className="button" onClick={() => clearItem(item)}>
           Cancelar reservación
         </button>

@@ -32,8 +32,4 @@ Launches Cypress.
 
 ## Run with Docker
 
-```
-    docker build -t core-frontend .
-
-    docker run -it -p 8080:8080 --rm --name core-frontend-app core-frontend
-```
+### npm run start:docker

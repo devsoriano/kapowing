@@ -18,6 +18,7 @@ export const FinalData = ({
   departureTime,
   passengers,
   totalCost,
+  quantity,
 }: any) => {
   return (
     <CardContainer>
@@ -31,9 +32,15 @@ export const FinalData = ({
           )} MXN`}</Price>
         </h3>
         <h3>
-          {`Por ${passengers} pasajeros`}{' '}
+          {`X ${passengers} pasajeros`}{' '}
           <Price>{`${moneyFormat.format(totalCost)} MXN`}</Price>
         </h3>
+        {quantity > 1 && (
+          <h3>
+            {`X ${quantity} veces este paquete:`}
+            <Price>{` ${moneyFormat.format(totalCost * quantity)} MXN`}</Price>
+          </h3>
+        )}
       </Info>
     </CardContainer>
   );

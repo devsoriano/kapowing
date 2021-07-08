@@ -30,6 +30,7 @@ const Checkout = ({ cartItems, clearCart, total }: ICheckout) => {
               img,
               passengers,
               totalCost,
+              quantity,
             }: any) => (
               <CheckoutItem
                 key={`${id}`}
@@ -44,6 +45,7 @@ const Checkout = ({ cartItems, clearCart, total }: ICheckout) => {
                   img,
                   passengers,
                   totalCost,
+                  quantity,
                 }}
               />
             ),

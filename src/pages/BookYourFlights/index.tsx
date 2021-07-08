@@ -4,11 +4,13 @@ import { createStructuredSelector } from 'reselect';
 import { SubmitErrorHandler, useForm } from 'react-hook-form';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import { clearCart } from '../../redux/cart/cart.actions';
+import { moneyFormat } from '../../utils/utils';
 import type { FormValues, IBookYourFlights } from './interface';
 import { defaultValues, numberInputs } from './constants';
 import { ReserveContainer, Space, Title } from './styles';
 import { AddPersonalData } from './components/AddPersonalData';
 import { FinalData } from './components/FinalData';
+import { Total } from '../Checkout/styles';
 
 const BookYourFlights = ({ cartItems, clearCart }: IBookYourFlights) => {
   const [finalData, setFinalData] = useState({});
@@ -33,6 +35,8 @@ const BookYourFlights = ({ cartItems, clearCart }: IBookYourFlights) => {
   const disabled = Object.keys(dirtyFields).length;
   const { name, surname, address, email }: any = finalData;
 
+  console.log();
+
   return (
     <>
       {cartItems.length > 0 && !isReserved ? (
@@ -53,8 +57,7 @@ const BookYourFlights = ({ cartItems, clearCart }: IBookYourFlights) => {
               <Title>¡Gracias por tu reserva!</Title>
               <Space>
                 {name} {surname} con el correo {email} y dirección {address} tus
-                reservaciones han sido realizadas de manera exitosa, tus
-                reservaciones son las siguientes:
+                reservaciones han sido realizadas de manera exitosa:
               </Space>
               {finalCartItems.map(
                 ({
@@ -67,6 +70,7 @@ const BookYourFlights = ({ cartItems, clearCart }: IBookYourFlights) => {
                   passengers,
                   totalCost,
                   id,
+                  quantity,
                 }: any) => (
                   <FinalData
                     {...{
@@ -78,6 +82,7 @@ const BookYourFlights = ({ cartItems, clearCart }: IBookYourFlights) => {
                       departureTime,
                       passengers,
                       totalCost,
+                      quantity,
                     }}
                     key={id}
                   />

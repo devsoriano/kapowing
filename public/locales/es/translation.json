@@ -1,0 +1,25 @@
+{
+  "cardCart": {
+    "myReservation": "Mis reservas",
+    "cardDropDown": {
+      "emptyMessage": "Aún no cuentas con reservas",
+      "button": "Ir a mis reservas"
+    }
+  },
+  "search": {
+    "departureAirport": "Aeropuerto de salida",
+    "arrivalAirport": "Aeropuerto de llegada",
+    "departureDate": "Salida",
+    "passengers": "Pasajeros",
+    "searchForFlights": "Buscar vuelos",
+    "selectAirport": "Selecciona aeropuerto",
+    "error": {
+      "departureDate": "Ingrese una fecha de salida",
+      "airport": "Ingrese un aereopuerto",
+      "passengers": {
+        "required": "Ingrese un número de pasajeros",
+        "length": "Puedes ingresar hasta 9 pasajeros"
+      }
+    }
+  }
+}

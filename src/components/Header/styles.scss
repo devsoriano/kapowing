@@ -1,0 +1,29 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  background-color: white;
+  position: fixed;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
+  z-index: 8;
+
+  .logo {
+    height: 70px;
+    margin-left: 20px;
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+}
